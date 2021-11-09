@@ -7,6 +7,8 @@ export const storageService = {
   put,
   remove,
   postMany,
+  load,
+  _save
 };
 
 function query(entityType) {
@@ -22,7 +24,9 @@ function get(entityType, entityId) {
 }
 
 function post(entityType, newEntity) {
-  newEntity.id = _makeId();
+  
+  // console.log(newEntity.id);
+  
   return query(entityType).then((entities) => {
     entities.push(newEntity);
     _save(entityType, entities);
@@ -57,6 +61,9 @@ function remove(entityType, entityId) {
 
 function _save(entityType, entities) {
   localStorage.setItem(entityType, JSON.stringify(entities));
+}
+function load(entityType) {
+  JSON.parse(localStorage.getItem(entityType));
 }
 
 function _makeId(length = 5) {

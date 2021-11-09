@@ -47,7 +47,7 @@ h6 {
 }
 
 .details-img-container {
-  width: 500px;
+  width: 60%;
   height: 500px;
 }
 .details-img-container img {
@@ -64,7 +64,7 @@ h6 {
   align-items: center;
   flex-direction: column;
   width: 350px;
-  height: 350px;
+  height: 500px;
   cursor: pointer;
   border: 10px solid #adadad;
 }
@@ -93,6 +93,9 @@ h6 {
 .price-bar {
   margin-top: 10px;
 }
+.price-bar input {
+  width: 20%;
+}
 
 .book-details {
   display: flex;
@@ -114,7 +117,6 @@ h6 {
   font-size: 1.5rem;
 }
 .book-details p {
-  height: 50px;
   font-size: 1.2rem;
 }
 
@@ -137,7 +139,7 @@ h6 {
 
 .book-filter {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
   padding-bottom: 10px;
 }
@@ -154,7 +156,7 @@ h6 {
 }
 
 .book-card:hover img {
-  transform: translateY(-10px);
+  transform: translateY(-20px);
 }
 
 .back-btn {
@@ -216,7 +218,6 @@ nav a:hover {
 
 textarea {
   resize: none;
-  
 }
 
 .about-header {
@@ -258,4 +259,84 @@ textarea {
 .text-area-content {
   overflow-wrap: anywhere;
   width: 100%;
+}
+
+.modal {
+  background-color: azure;
+  width: 50%;
+  min-height: 30%;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  z-index: 10;
+  border: 10px solid #adadad;
+  text-align: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.close-modal-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: #f93b3b;
+}
+
+.new-books-list {
+  list-style-type: none;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0px;
+  line-break: auto;
+  border: 1px solid #adadad;
+  align-items: center;
+  margin: 15px 10%;
+}
+
+ul button {
+  width: 30px;
+  height: 30px;
+  margin: 0px 5px;
+}
+
+ul li {
+  width: 80%;
+}
+
+.next-prev-btns {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.book-info {
+  border: 5px solid gainsboro;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.book-info strong {
+  text-decoration: underline;
+}
+
+.search-online-btn {
+  width: 200px;
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.filters {
+  flex-direction: column;
+  display: flex;
+}
+
+.search-online-btn {
+  align-self: center;
+  font-size: 1.7rem;
 }

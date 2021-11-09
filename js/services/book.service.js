@@ -11,7 +11,10 @@ export const bookService = {
   saveReview,
   remove,
   removeReview,
-  getNextBookId
+  getNextBookId,
+  ask,
+  saveToOurDb,
+  // getPrevBookId
 };
 function query() {
   return storageService.query(BOOK_KEYS);
@@ -35,14 +38,15 @@ function saveReview(review, book) {
   return storageService.put(BOOK_KEYS, book);
 }
 
-function getNextBookId(bookId){
-  return query()
-      .then(books =>{
-        const idx = books.findIndex((book) => book.id === bookId);
-        return (idx === books.length - 1) ? books[0].id : books[idx + 1].id;
-      
-      })
-
+function getNextBookId(bookId) {
+  return query().then((books) => {
+    const idx = books.findIndex((book) => book.id === bookId);
+    if (idx === books.length - 1)
+      return { next: books[0].id, prev: books[idx - 1].id };
+    else if (idx === 0)
+      return { next: books[idx + 1].id, prev: books[books.length - 1].id };
+    return { next: books[idx + 1].id, prev: books[idx - 1].id };
+  });
 }
 
 function _makeId(length = 5) {
@@ -63,4 +67,27 @@ function removeReview(book, reviewId) {
   const idx = book.reviews.findIndex((review) => review.id === reviewId);
   book.reviews.splice(idx, 1);
   storageService.put(BOOK_KEYS, book);
+}
+
+function ask(str) {
+  let data = storageService.load(str);
+  if (data) return data;
+  return axios
+    .get(`https://www.googleapis.com/books/v1/volumes?printType=books&q=${str}`)
+    .then((books) => {
+      console.log("Axios books:", books.data.items);
+      storageService._save(str, books.data.items);
+      return books.data.items;
+    });
+}
+
+function saveToOurDb(newBook) {
+  return query().then((books) => {
+    let haveIt = books.some((book) => {
+      return book.id === newBook.id;
+    });
+    if (!haveIt) {
+      storageService.post("books", newBook);
+    }
+  });
 }
