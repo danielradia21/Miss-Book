@@ -1,0 +1,261 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: azure;
+}
+header {
+  text-align: center;
+  font-size: 2.5rem;
+
+  letter-spacing: 3px;
+}
+
+header h2 {
+  text-decoration: underline;
+}
+p {
+  margin: 5px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+.content-main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.book-container {
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.details-img-container {
+  width: 500px;
+  height: 500px;
+}
+.details-img-container img {
+  height: 100%;
+  width: 100%;
+}
+
+.book-card {
+  margin: 0;
+  font-size: 19px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 350px;
+  height: 350px;
+  cursor: pointer;
+  border: 10px solid #adadad;
+}
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-evenly;
+  width: 45%;
+  margin-bottom: 20px;
+  border: 10px solid gainsboro;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 10%;
+}
+
+.price-bar {
+  margin-top: 10px;
+}
+
+.book-details {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-content: space-between;
+  width: 45%;
+  border: 10px solid gainsboro;
+}
+
+.book-details h1 {
+  font-size: 2.2rem;
+  text-decoration: underline;
+}
+
+.book-details span {
+  font-size: 1.5rem;
+}
+.book-details p {
+  height: 50px;
+  font-size: 1.2rem;
+}
+
+.book-details div {
+  margin: 5px 20px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-filter {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.prev-img {
+  width: 240px;
+  height: 240px;
+}
+
+.prev-img img {
+  height: 100%;
+  width: 100%;
+  transition: 0.5s;
+}
+
+.book-card:hover img {
+  transform: translateY(-10px);
+}
+
+.back-btn {
+  width: 90px;
+  height: 25px;
+  align-self: baseline;
+  margin: 20px;
+}
+
+footer {
+  font-size: 30px;
+  align-self: center;
+  text-align: center;
+  margin: 20px 35px;
+  padding: 20px;
+  border: 10px solid gainsboro;
+  width: 45%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+nav a:hover {
+  color: rgb(186, 189, 181);
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 350px;
+}
+
+.reviews {
+  padding: 5%;
+  border: 1px solid black;
+}
+
+.home-page-header {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  width: 70%;
+  align-self: center;
+  text-align: center;
+  margin: 30px;
+  padding: 30px;
+}
+
+.about-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 30px;
+  text-align: center;
+}
+
+textarea {
+  resize: none;
+  
+}
+
+.about-header {
+  width: 60%;
+  letter-spacing: 1px;
+  color: rgb(24, 21, 21);
+  border: 5px solid #adadad;
+  padding: 25px;
+}
+.about-header h5 {
+  padding: 10px;
+  border: 5px solid #adadad;
+}
+
+.about-content {
+  padding: 30px;
+  font-size: 1.5rem;
+}
+
+.about-content-body {
+  line-height: 35px;
+}
+
+.home-page-content {
+  width: 50%;
+  line-height: 40px;
+}
+
+.router-link-exact-active {
+  color: #909090;
+}
+
+.book-details-btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-area-content {
+  overflow-wrap: anywhere;
+  width: 100%;
+}
